@@ -1,11 +1,11 @@
 const http = require('http');
 const app = require('./app');
 
+// Creates a HTTP Server
+const server = http.createServer(app);
+
 // Use environment variable PORT
 const PORT = process.env.PORT || 3500;
 
-// Creates a HTTP Server object
-const server = http.createServer(app);
-
-// Server listens to requests at a certain PORT
+// Server listens to requests at PORT
 server.listen(PORT, () => console.log(`Server running at PORT: ${PORT}`));
